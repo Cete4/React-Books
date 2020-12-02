@@ -70,12 +70,14 @@ class Home extends Component {
                             </Search>
                         </Col>
                     </Row>
+                    <br></br>
                     <Row>
                         <Col size="md-12">
+                            <h1>Book Search Results</h1>
                             {this.state.books.map(book => (
                                 <BookCard
                                     key={book.id}
-                                    src={book.items.imageLinks.smallThumbnail}
+                                    src={book.items.imageLinks.thumbnail}
                                     title={book.volumeInfo.authors[0]}
                                     date={book.volumeInfo.publishedDate}
                                     description={book.volumeInfo.description}
