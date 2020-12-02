@@ -60,6 +60,11 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Col size="md-12">
+                            
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size="md-12">
                             {this.state.books.map(book => (
                                 <BookCard
                                     key={book.id}
