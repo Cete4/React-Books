@@ -59,8 +59,8 @@ class Home extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            {this.state.map.books.map(book => (
+                        <Col size="md-12">
+                            {this.state.books.map(book => (
                                 <BookCard
                                     key={book.id}
                                     src={book.items.imageLinks.smallThumbnail}
