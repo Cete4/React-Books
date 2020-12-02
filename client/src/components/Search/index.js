@@ -6,7 +6,7 @@ function Search(props) {
     return (
         <Navbar className="bg-light justify-content-between">
             <Form inline>
-                <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
+                <FormControl type="text" placeholder="Search" className=" mr-sm-2" value={props.search} />
                 <Button type="submit" onClick={props.handleFormSubmit}>Submit</Button>
             </Form>
         </Navbar>

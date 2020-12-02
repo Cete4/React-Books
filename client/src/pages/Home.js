@@ -77,7 +77,8 @@ class Home extends Component {
                             {this.state.books.map(book => (
                                 <BookCard
                                     key={book.id}
-                                    src={book.volumeInfo.imageLinks.thumbnail}
+                                    title={book.volumeInfo.author}
+                                    src={book.volumeInfo.imageLinks.smallThumbnail}
                                     title={book.volumeInfo.author}
                                     date={book.volumeInfo.publishedDate}
                                     description={book.volumeInfo.description}
