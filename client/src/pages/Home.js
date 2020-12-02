@@ -37,50 +37,53 @@ class Home extends Component {
         });
     };
 
-// When the form is submitted, use the API.saveBook method to save the book data
-// Then reload books from the database
-function handleFormSubmit(event) {
-    event.preventDefault();
-    this.search(this.state.search);
-};
+    // When the form is submitted, use the API.saveBook method to save the book data
+    // Then reload books from the database
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.search(this.state.search);
+    };
 
-return (
-    <Container fluid>
-        <Row>
-            <Col size="md-12">
-                <Jumbotron>
-                    <h1>Books</h1>
-                </Jumbotron>
+    render() {
+        return (
+            <div>
+                <Container>
+                    <Row>
+                        <Col size="md-12">
+                            <Jumbotron>
+                                <h1>Books</h1>
+                            </Jumbotron>
 
 
-            </Col>
-        </Row>
-        <Row>
-            <Col>
-                {this.state.map.books.map(book => (
-                    <BookCard
-                        key={book.id}
-                        src={book.items.imageLinks.smallThumbnail}
-                        title={book.volumeInfo.authors[0]}
-                        date={book.volumeInfo.publishedDate}
-                        description={book.volumeInfo.description}
-                        link={book.volumeInfo.infoLink}
-                        link={book.volumeInfo.infoLink}
-                        handleSaveBook={() => this.handleSaveBook({
-                            title: book.volumeInfo.title,
-                            src: book.volumeInfo.imageLinks,
-                            author: book.volumeInfo.authors,
-                            date: book.volumeInfo.publishedDate,
-                            description: book.volumeInfo.description,
-                            link: book.volumeInfo.infoLink
-                        })}
-                    />
-                ))}
-            </Col>
-        </Row>
-    </Container>
-);
-                    }
-
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            {this.state.map.books.map(book => (
+                                <BookCard
+                                    key={book.id}
+                                    src={book.items.imageLinks.smallThumbnail}
+                                    title={book.volumeInfo.authors[0]}
+                                    date={book.volumeInfo.publishedDate}
+                                    description={book.volumeInfo.description}
+                                    link={book.volumeInfo.infoLink}
+                                    link={book.volumeInfo.infoLink}
+                                    handleSaveBook={() => this.handleSaveBook({
+                                        title: book.volumeInfo.title,
+                                        src: book.volumeInfo.imageLinks,
+                                        author: book.volumeInfo.authors,
+                                        date: book.volumeInfo.publishedDate,
+                                        description: book.volumeInfo.description,
+                                        link: book.volumeInfo.infoLink
+                                    })}
+                                />
+                            ))}
+                        </Col>
+                    </Row>
+                </Container >
+            </div >
+        );
+    }
+}
 
 export default Home;
