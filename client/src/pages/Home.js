@@ -8,9 +8,9 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
 
-function Books() {
+function Home() {
     // Setting our component's initial state
-    constt[books, setBooks] = useState([])
+    const[books, setBooks] = useState([])
     const [formObject, setFormObject] = useState({})
 
     // Load all books and store them with setBooks
@@ -92,4 +92,4 @@ function Books() {
 }
 
 
-export default Books;
+export default Home;
