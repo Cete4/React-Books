@@ -29,13 +29,13 @@ class Home extends Component {
     };
 
     // Handles updating component state when the user types into the input field
-    function handleInputChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-        [name]: value
-    });
-};
+    handleInputChange = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        });
+    };
 
 // When the form is submitted, use the API.saveBook method to save the book data
 // Then reload books from the database
