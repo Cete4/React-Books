@@ -73,11 +73,22 @@ function Home() {
             <Row>
                 <Col>
                     {this.state.map.books.map(book => (
-                        <BookCard 
-                        key = {book.id}
-                        src = {book.items.imageLinks.smallThumbnail}
-                        title = {book.volumeInfo.authors[0]}
-                        date
+                        <BookCard
+                            key={book.id}
+                            src={book.items.imageLinks.smallThumbnail}
+                            title={book.volumeInfo.authors[0]}
+                            date={book.volumeInfo.publishedDate}
+                            description={book.volumeInfo.description}
+                            link={book.volumeInfo.infoLink}
+                            link={book.volumeInfo.infoLink}
+                            handleSaveBook={() => this.handleSaveBook({
+                                title: book.volumeInfo.title,
+                                src: book.volumeInfo.imageLinks,
+                                author: book.volumeInfo.authors,
+                                date: book.volumeInfo.publishedDate,
+                                description: book.volumeInfo.description,
+                                link: book.volumeInfo.infoLink
+                            })}
                         />
 
                     ))}

@@ -9,6 +9,7 @@ function BookCard(props) {
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Text id="heavy">Author: <p>{props.author}</p></Card.Text>
+            <Card.Text id="heavy">Date: <p>{props.Date}</p></Card.Text>
             <Card.Text>{props.description}</Card.Text>
             <Button variant="primary" onClick={props.handleSaveBook}>SAVE</Button>
         </Card.Body>
