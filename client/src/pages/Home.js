@@ -9,14 +9,24 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
 
 function Home() {
-    // Setting our component's initial state
-    const[books, setBooks] = useState([])
-    const [formObject, setFormObject] = useState({})
+    state = {
+        value: "",
+        books: []
+    };
 
-    // Load all books and store them with setBooks
-    useEffect(() => {
-        loadBooks()
-    }, [])
+    search = query => {
+        API.search(query)
+            .then(res =>
+                this.setState(
+                    {
+                        books: res.data.items,
+                        search: ""
+                    },
+                    console.log(res.data.items)
+                )
+            )
+            .catch(err => console.log(err));
+    };
 
     // Loads all books and sets them to books
     function loadBooks() {
@@ -26,13 +36,6 @@ function Home() {
             )
             .catch(err => console.log(err));
     };
-
-    // Deletes a book from the database with a given id, then reloads books from the db
-    function deleteBook(id) {
-        API.deleteBook(id)
-            .then(res => loadBooks())
-            .catch(err => console.log(err));
-    }
 
     // Handles updating component state when the user types into the input field
     function handleInputChange(event) {
@@ -62,29 +65,7 @@ function Home() {
                     <Jumbotron>
                         <h1>Books</h1>
                     </Jumbotron>
-                    <form>
-                        <Input
-                            onChange={handleInputChange}
-                            name="title"
-                            placeholder="Title (required)"
-                        />
-                        <Input
-                            onChange={handleInputChange}
-                            name="author"
-                            placeholder="Author (required)"
-                        />
-                        <TextArea
-                            onChange={handleInputChange}
-                            name="synopsis"
-                            placeholder="Synopsis (Optional)"
-                        />
-                        <FormBtn
-                            disabled={!(formObject.author && formObject.title)}
-                            onClick={handleFormSubmit}
-                        >
-                            Submit Book
-                </FormBtn>
-                    </form>
+                   
                 </Col>
             </Row>
         </Container>
