@@ -63,7 +63,11 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Col size="md-12">
-                            <Search></Search>
+                            <Search
+                                value={this.state.search}
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit}>
+                            </Search>
                         </Col>
                     </Row>
                     <Row>
