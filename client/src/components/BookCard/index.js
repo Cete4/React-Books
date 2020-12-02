@@ -8,6 +8,7 @@ function BookCard(props) {
         <Card.Img variant="left" src={props.src} />
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
+            <Card.Text id="heavy">Author: <p>{props.author}</p></Card.Text>
             <Card.Text>{props.description}</Card.Text>
             <Button variant="primary" onClick={props.handleSaveBook}>SAVE</Button>
         </Card.Body>
