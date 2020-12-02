@@ -8,6 +8,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import BookCard from "../components/BookCard";
+import Search from "../components/Search";
 
 
 class Home extends Component {
@@ -60,7 +61,7 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Col size="md-12">
-                            
+                            <Search></Search>
                         </Col>
                     </Row>
                     <Row>
