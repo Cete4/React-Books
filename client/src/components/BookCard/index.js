@@ -8,11 +8,8 @@ function BookCard(props) {
         <Card.Img variant="left" src={props.src} />
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
-            <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-    </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Card.Text>{props.description}</Card.Text>
+            <Button variant="primary" onClick={props.handleSaveBook}>SAVE</Button>
         </Card.Body>
     </Card>
 }
