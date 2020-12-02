@@ -1,3 +1,4 @@
+import React from "react";
 import { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
