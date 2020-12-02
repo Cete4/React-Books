@@ -72,7 +72,15 @@ function Home() {
             </Row>
             <Row>
                 <Col>
-                    <BookCard></BookCard>
+                    {this.state.map.books.map(book => (
+                        <BookCard 
+                        key = {book.id}
+                        src = {book.items.imageLinks.smallThumbnail}
+                        title = {book.volumeInfo.authors[0]}
+                        date
+                        />
+
+                    ))}
                 </Col>
             </Row>
         </Container>
