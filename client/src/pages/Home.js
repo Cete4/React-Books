@@ -1,12 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import BookCard from "../components/BookCard";
 import Search from "../components/Search";
 
@@ -46,6 +42,12 @@ class Home extends Component {
         this.search(this.state.search);
     };
 
+    handleSaveBook = book => {
+        API.saveBook(book)
+            .then(console.log(book))
+            .catch(err => console.log(err));
+    };
+
     render() {
         return (
             <div>
@@ -75,7 +77,7 @@ class Home extends Component {
                                     description={book.volumeInfo.description}
                                     link={book.volumeInfo.infoLink}
                                     link={book.volumeInfo.infoLink}
-                                    handleSaveBook={() => this.handleSaveBook({
+                                    handleSaveBook={() => this.handleSave({
                                         title: book.volumeInfo.title,
                                         src: book.volumeInfo.imageLinks,
                                         author: book.volumeInfo.authors,
