@@ -42,7 +42,7 @@ class Home extends Component {
         this.search(this.state.search);
     };
 
-    handleSaveBook = book => {
+    handleSave = book => {
         API.saveBook(book)
             .then(console.log(book))
             .catch(err => console.log(err));
