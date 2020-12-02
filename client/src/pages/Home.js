@@ -76,7 +76,6 @@ class Home extends Component {
                                     date={book.volumeInfo.publishedDate}
                                     description={book.volumeInfo.description}
                                     link={book.volumeInfo.infoLink}
-                                    link={book.volumeInfo.infoLink}
                                     handleSaveBook={() => this.handleSave({
                                         title: book.volumeInfo.title,
                                         src: book.volumeInfo.imageLinks,

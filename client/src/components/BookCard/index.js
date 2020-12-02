@@ -10,7 +10,7 @@ function BookCard(props) {
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text id="heavy">Author: <p>{props.author}</p></Card.Text>
                 <Card.Text id="heavy">Date: <p>{props.Date}</p></Card.Text>
-                <Card.Text id="heavy">Link: <a href={props.link} target={"_blank"}>{props.link}</a></Card.Text>
+                <Card.Text id="heavy">Link: <a href={props.link} target={"_blank"} rel="noopener noreferrer">{props.link}</a></Card.Text>
                 <Card.Text>{props.description}</Card.Text>
                 <Button variant="primary" onClick={props.handleSave}>SAVE</Button>
             </Card.Body>
